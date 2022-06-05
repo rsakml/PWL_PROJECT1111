@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\SupplierController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +29,9 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/beranda', [BerandaController::class, 'index']);
+
+//route employee
+Route::resource('/employee', EmployeeController::class);
+
+//route supplier
+Route::resource('/supplier', SupplierController::class);
