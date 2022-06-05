@@ -37,12 +37,18 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //melakukan validasi data
-        $request->validate([ 'id' => 'required', 'nama' => 'required', 'foto' => 'required',
-        'jeniskelamin' => 'required', 'jabatan' => 'required','nohp' => 'required',
-        ]);
-        //fungsi eloquent untuk menambah data 
-        Employee::create($request->all());
+        if($request->file('gambar')){
+            $gambar1=$request->file('gambar')->store('img','public');
+        }
+        
+            Employee::create([
+                'id' => $request->id,
+                'nama' => $request->nama,
+                'gambar' => $gambar1,
+                'jenisKelamin' => $request->jenisKelamin,
+                'jabatan' => $request->jabatan,
+                'nohp' => $request->nohp
+            ]);
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama 
         return redirect()->route('employee.index')
@@ -58,7 +64,7 @@ class EmployeeController extends Controller
     public function show($id)
     {
         //menampilkan detail data dengan menemukan/berdasarkan id Employee
-        $Employee = Employee::find($id);
+        $employee = Employee::find($id);
         return view('employee.detail', compact('employee'));
     }
 
@@ -71,7 +77,7 @@ class EmployeeController extends Controller
     public function edit($id)
     {
         //menampilkan detail data dengan menemukan berdasarkan id Employee untuk diedit
-        $Employee = Employee::find($id);
+        $employee = Employee::find($id);
         return view('employee.edit', compact('employee'));
     }
 
@@ -85,8 +91,8 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
         //melakukan validasi data
-        $request->validate([ 'id' => 'required', 'nama' => 'required', 'foto' => 'required',
-        'jeniskelamin' => 'required', 'jabatan' => 'required','nohp' => 'required',
+        $request->validate([ 'id' => 'required', 'nama' => 'required', 'gambar' => 'required',
+        'jenisKelamin' => 'required', 'jabatan' => 'required','nohp' => 'required',
         ]);
 
         //fungsi eloquent untuk mengupdate data inputan kita 

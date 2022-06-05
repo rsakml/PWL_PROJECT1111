@@ -35,7 +35,8 @@
                 <td>{{ $e->nohp }}</td>
                 <td>
                     <form action="{{ route('employee.destroy', $e->id) }}" method="POST"> <a
-                            class="btn btn-primary" href="{{ route('employee.show', $e->id) }}">Edit</a>
+                            class="btn btn-primary" href="{{ route('employee.edit', $e->id) }}">Edit</a>
+                            <a class="btn btn-info" href="{{ route('employee.show', $e->id) }}">Show</a>
                         @csrf
                          @method('DELETE') <button type="submit" class="btn btn-danger">Delete</button> </form>
                 </td>

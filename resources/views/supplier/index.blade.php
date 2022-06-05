@@ -33,7 +33,8 @@
                 <td>{{ $s->email }}</td>
                 <td>
                     <form action="{{ route('supplier.destroy', $s->id) }}" method="POST"> <a
-                            class="btn btn-primary" href="{{ route('supplier.show', $s->id) }}">Edit</a>
+                            class="btn btn-primary" href="{{ route('supplier.edit', $s->id) }}">Edit</a>
+                            <a class="btn btn-info" href="{{ route('supplier.show', $s->id) }}">Show</a>
                         @csrf
                          @method('DELETE') <button type="submit" class="btn btn-danger">Delete</button> </form>
                 </td>
