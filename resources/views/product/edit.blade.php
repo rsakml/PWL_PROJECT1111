@@ -28,7 +28,7 @@
                         <label for="foto">Foto</label>
                         <input type="file" class="form-control" required="required" name="foto"
                             value="{{ $Product->foto }}"></br>
-                        <img width="150px" src="{{ asset('storage/' . $Product->foto) }}">
+                        <img width="150px" src="{{ asset('storage/'.$Product->foto)}}">
                     </div>
                     <div class="form-group">
                         <label for="nama_product">Nama Product</label>

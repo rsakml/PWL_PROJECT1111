@@ -2,19 +2,10 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left mt-2">
-                <h2>Furniture Store</h2>
+            <div class="pull-center mt-2">
+                <Center>DATA PRODUCT</Center>
             </div>
-            {{-- <div class="float-left my-2">
-                {{-- <form action="{{ route('search') }}" method="GET"> --}}
-                    {{-- <div class="input-group mb-3">  
-                        <input type="text" class="form-control" name="cari" size ="30" placeholder="Masukkan Nama Mahasiswa">
-                        <div class="input-group-append">
-                            <button class="btn btn-info" type="submit">Search</button>
-                        </div>
-                    </div>   
-                </form>   
-            </div> --}} 
+<br>
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('product.create') }}"> Input Product</a>
             </div>
@@ -25,7 +16,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    <table class="table table-bordered">
+    <table class="table table-striped table-hover">
         <tr>
             <th>ID Product</th>
             <th>Foto</th>
@@ -40,7 +31,7 @@
         <tr>
 
             <td>{{ $produk->id_product }}</td>
-            <td><img width="100px" height="100px" src="{{ asset('storage/' . $produk->foto) }}"></td>       
+            <td><img width="100px" height="100px" src="{{asset('img/'.$produk->foto)}}"></td>       
             <td>{{ $produk->nama_product }}</td>
             <td>{{ $produk->merk }}</td>
             <td>{{ $produk->harga_beli}}</td>
@@ -62,3 +53,6 @@
         {{ $paginate->links() }}
         
 @endsection
+
+
+

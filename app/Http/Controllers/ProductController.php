@@ -49,7 +49,7 @@ class ProductController extends Controller
 
         $product = new Product;
         $product->id_product = $request->get('id_product');
-        $product->foto = $request->file('foto')->store('images', 'public');
+        $product->foto = $request->file('foto')->store('img', 'public');
         $product->nama_product = $request->get('nama_product');
         $product->merk = $request->get('merk');
         $product->harga_beli = $request->get('harga_beli');
@@ -115,7 +115,7 @@ class ProductController extends Controller
         if($product->foto && file_exists(storage_path('app/public/'. $product->foto))){
             \Storage::delete('public/'. $product->foto);
         }
-        $image_name = $request->file('foto')->store('images', 'public');
+        $image_name = $request->file('foto')->store('img', 'public');
         $product->foto = $image_name;
         $product->nama_product = $request->get('nama_product');
         $product->merk = $request->get('merk');

@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>ID Product: </b>{{$Product->id_product}}</li>           
-                    <li class="list-group-item"><b>Foto: </b><img width="100px" src="{{ asset('storage/' . $Product->foto) }}">
+                    <li class="list-group-item"><b>Foto: </b><img width="100px" src="{{ asset('storage/' .$Product->foto)}}">
                     <li class="list-group-item"><b>Nama Product: </b>{{$Product->nama_product}}</li>
                     <li class="list-group-item"><b>Merk: </b>{{$Product->merk}}</li>
                     <li class="list-group-item"><b>Harga Beli: </b>{{$Product->harga_beli}}</li>

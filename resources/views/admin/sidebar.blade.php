@@ -40,10 +40,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Product</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Supplier</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Customer</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Employee</a></li>
+            <li><a href="product"><i class="fa fa-circle-o"></i> Product</a></li>
+            <li><a href="supplier"><i class="fa fa-circle-o"></i> Supplier</a></li>
+            <li><a href="customer"><i class="fa fa-circle-o"></i> Customer</a></li>
+            <li><a href="employee"><i class="fa fa-circle-o"></i> Employee</a></li>
           </ul>
         </li>
 
