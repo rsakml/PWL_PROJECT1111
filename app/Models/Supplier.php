@@ -14,9 +14,8 @@ class Supplier extends Model
     protected $fillable = [
         'id',
         'nama',
-        'foto', 
-        'jeniskelamin', 
-        'jabatan',
-        'nohp',
+        'gambar', 
+        'kategori', 
+        'email',
     ];
 }
